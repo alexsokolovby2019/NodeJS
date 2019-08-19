@@ -96,11 +96,16 @@ console.log("Завершение пример 2 асинхронных мето
 ////////////////////////////////////////////
 
 
-/*
 ////////////////////////////////////////////
 // server variant - 1
 const http = require("http");
 http.createServer(function (request, responce) {
+
+    console.log("Url: " + request.url);
+    console.log("Тип запроса: " + request.method);
+    console.log("User-Agent: " + request.headers["user-agent"]);
+    console.log("Все заголовки");
+    console.log(request.headers);
 
     responce.end("Hello NodeJS!");
 
@@ -108,8 +113,9 @@ http.createServer(function (request, responce) {
     console.log("Server has begun listening requests on port 3000");
 })
 ////////////////////////////////////////////
-*/
 
+
+/*
 ////////////////////////////////////////////
 // server variant - 2
 const express = require("express");
@@ -123,3 +129,4 @@ app.get("/", function(request, response){
 // начинаем прослушивание подключений на 3000 порту
 app.listen(3000);
 ////////////////////////////////////////////
+*/
